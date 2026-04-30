@@ -70,3 +70,10 @@ footer {
     font-size: 0.9rem;
     text-align: center;
 }
+/* Ensure images fit within the website boundaries */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
