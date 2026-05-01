@@ -23,21 +23,106 @@
     <main class="container">
         <section id="updates">
             <h2>Updates & Milestones</h2>
-            <p>A timeline of recent professional developments, academic progress, and athletic achievements.</p>
+            <p style="margin-bottom: 30px;">A timeline of recent professional developments, academic progress, and athletic achievements.</p>
             
-            <div style="margin-top: 40px;">
-                <h3 style="margin-bottom: 5px;">Best of Tian Shan Mountains Trek</h3>
-                <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;">July 2026</p>
-                <p>Preparation is underway for a multi-day guided trek through the Tian Shan Mountains in Kyrgyzstan. Looking forward to testing endurance at altitude and capturing the alpine environment.</p>
+            <div class="filter-container">
+                <label for="sort-updates" style="font-weight: 600; margin-right: 15px;">Sort & Filter:</label>
+                <select id="sort-updates">
+                    <option value="most-recent">Most Recent</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="2026">2026</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                </select>
+            </div>
 
-                <hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;">
+            <div id="updates-list">
 
-                <h3 style="margin-bottom: 5px;">Graduating from Drexel University</h3>
-                <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;">June 2026</p>
-                <p>Completing an undergraduate degree in Architectural Engineering with a concentration in structural engineering. The final senior design project, the Hunting Park Residences, has been successfully wrapped up.</p>
+                <div class="milestone" data-year="2026" data-date="2026-08">
+                    <div class="milestone-text">
+                        <h3 style="margin-bottom: 5px;">Starting at Mulhern+Kulp & Villanova</h3>
+                        <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;">August 2026</p>
+                        <p>Excited to announce the start of a full-time structural engineering position at Mulhern+Kulp. Concurrently, graduate-level coursework for a Master of Science in Civil Engineering will begin at Villanova University.</p>
+                    </div>
+                    <div class="milestone-visual">
+                        <img src="images/villanova.jpg" alt="Villanova University campus">
+                        <p class="caption">Transitioning to graduate studies.</p>
+                    </div>
+                </div>
+
+                <div class="milestone" data-year="2026" data-date="2026-07">
+                    <div class="milestone-text">
+                        <h3 style="margin-bottom: 5px;">Best of Tian Shan Mountains Trek</h3>
+                        <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;">July 2026</p>
+                        <p>Preparation is underway for a multi-day guided trek through the Tian Shan Mountains in Kyrgyzstan. Looking forward to testing endurance at altitude and capturing the alpine environment.</p>
+                    </div>
+                    <div class="milestone-visual">
+                        <img src="images/kyrgyzstan.jpg" alt="Tian Shan Mountains">
+                        <p class="caption">Expedition preparation for the Tian Shan range.</p>
+                    </div>
+                </div>
+
+                <div class="milestone" data-year="2025" data-date="2025-09">
+                    <div class="milestone-text">
+                        <h3 style="margin-bottom: 5px;">Architectural Exploration in Japan</h3>
+                        <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;">September 2025</p>
+                        <p>Traveled through Tokyo, Kyoto, and Osaka. Spent significant time analyzing the intersection of traditional timber construction and modern seismic structural engineering.</p>
+                    </div>
+                    <div class="milestone-visual">
+                        <img src="images/japan.jpg" alt="Architecture in Japan">
+                        <p class="caption">Traditional timber framing in Kyoto.</p>
+                    </div>
+                </div>
+
+                <div class="milestone" data-year="2024" data-date="2024-06">
+                    <div class="milestone-text">
+                        <h3 style="margin-bottom: 5px;">Summit of Mt. Whitney</h3>
+                        <p style="color: #666; font-size: 0.9em; margin-bottom: 10px;">June 2024</p>
+                        <p>Successfully completed the summit of Mt. Whitney. The trek required extensive physical preparation and provided incredible panoramic views of the Sierra Nevada.</p>
+                    </div>
+                    <div class="milestone-visual">
+                        <img src="images/whitney.jpg" alt="Mt Whitney Summit">
+                        <p class="caption">At the summit elevation of 14,505 feet.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>
+
+    <script>
+        document.getElementById('sort-updates').addEventListener('change', function() {
+            const selectedValue = this.value;
+            const container = document.getElementById('updates-list');
+            const milestones = Array.from(container.getElementsByClassName('milestone'));
+
+            // Sort the milestones mathematically by their hidden "data-date" tag
+            milestones.sort((a, b) => {
+                const dateA = a.getAttribute('data-date');
+                const dateB = b.getAttribute('data-date');
+                if (selectedValue === 'oldest') {
+                    return dateA.localeCompare(dateB); // Ascending order
+                } else {
+                    return dateB.localeCompare(dateA); // Descending order
+                }
+            });
+
+            // Re-order them on the screen and hide/show based on the selected year
+            milestones.forEach(milestone => {
+                container.appendChild(milestone); 
+                
+                if (selectedValue === 'most-recent' || selectedValue === 'oldest') {
+                    milestone.style.display = ''; 
+                } else {
+                    if (milestone.getAttribute('data-year') === selectedValue) {
+                        milestone.style.display = '';
+                    } else {
+                        milestone.style.display = 'none'; 
+                    }
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
