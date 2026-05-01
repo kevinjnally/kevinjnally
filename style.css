@@ -76,7 +76,7 @@ h2 {
 
 .about-image img {
     width: 100%;
-    max-width: 300px; /* This limits how big the photo can get */
+    max-width: 350px; /* This limits how big the photo can get */
     margin: 0 auto; /* This centers the smaller photo */
     display: block;
     border-radius: 4px;
