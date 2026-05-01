@@ -141,3 +141,72 @@ footer {
         flex-direction: column;
     }
 }
+/* --- Updates Page Layout --- */
+.filter-container {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #000;
+}
+
+.filter-container select {
+    padding: 8px 15px;
+    font-family: inherit;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.milestone {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.milestone:last-child {
+    border-bottom: none;
+}
+
+/* Text takes up roughly 75% of the space */
+.milestone-text {
+    flex: 3; 
+}
+
+/* Image takes up roughly 25% of the space */
+.milestone-visual {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.milestone-visual img {
+    width: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.caption {
+    font-size: 0.85rem;
+    color: #666;
+    text-align: center;
+    margin: 0;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* Mobile Responsiveness: Stacks the text and image on small screens */
+@media (max-width: 768px) {
+    .milestone {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .milestone-visual {
+        width: 80%; /* Keeps the image from getting too massive on a phone */
+        margin: 0 auto;
+    }
+}
