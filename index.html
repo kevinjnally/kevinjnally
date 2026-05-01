@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kevin J Nally | About</title>
+    <title>Kevin J Nally | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <h1>Kevin J Nally</h1>
-        <nav>
+    <header class="page-banner">
+        <h1 class="page-title">Kevin J Nally</h1>
+        <nav class="main-nav">
             <a href="index.html">About</a>
             <a href="structures.html">Structures</a>
             <a href="photography.html">Photography</a>
@@ -20,51 +21,72 @@
         </nav>
     </header>
 
-    <main class="container">
+    <main class="page-content container wider-layout">
         
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>Architectural Engineering student at Drexel University specializing in structural design. I'm passionate about designing resilient and sustainable structures, photography, and endurance sports.</p>
+        <section id="about" class="wide-section">
+            <div class="wide-header">
+                <h2>About Me & Education</h2>
+            </div>
+            <div class="elegant-flow">
+                <div class="elegant-text">
+                    <p class="elegant-p"><em>(Insert brief description 1)</em> I am an architectural engineering student transitioning to graduate studies in Civil Engineering, with a focus on structural engineering. I balance technical precision with an appreciation for the built environment and photographic storytelling. <em>(Add more content, or generic placeholders, respecting all constraints.)</em></p>
+                    
+                    <div class="elegant-education">
+                        <div class="elegant-edu-item">
+                            <span class="elegant-label">University A:</span>
+                            <span class="elegant-degree">M.S. in Civil Engineering (Generic Placeholder)</span>
+                            <span class="elegant-details">Concentration in Structural Engineering (Generic Placeholder), Expected Start: August 2026 (Generic Placeholder)</span>
+                        </div>
+                        <div class="elegant-edu-item">
+                            <span class="elegant-label">University B:</span>
+                            <span class="elegant-degree">B.S. in Architectural Engineering (Generic Placeholder)</span>
+                            <span class="elegant-details">Concentration in Structural Engineering (Generic Placeholder), Minor in Art History (Generic Placeholder), Expected Graduation: June 2026 (Generic Placeholder)</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="about-image">
-                    <img src="images/whitneyselfie.jpg" alt="Kevin J Nally">
+                <div class="elegant-image">
+                    <img src="images/placeholder1.jpg" alt="Kevin J Nally | Profile | Photo 1" class="profile-img">
                 </div>
             </div>
         </section>
 
-        <section id="education">
-            <h2>Education</h2>
-            
-            <div class="edu-item">
-                <div class="edu-header">
-                    <p class="edu-school">Villanova University</p>
-                    <span class="edu-dates">Expected Start: August 2026</span>
-                </div>
-                <p class="edu-degree">Master of Science in Civil Engineering</p>
-                <ul class="edu-details">
-                    <li><strong>Concentration:</strong> Structural Engineering</li>
-                </ul>
+        <section id="work" class="grid-section">
+            <div class="section-header">
+                <h2>Multidisciplinary Work & Projects</h2>
+                <p>Selected engineering designs, photography collections, and updates. All labels and brief descriptions are generic placeholders. (Insert general work description 1)</p>
             </div>
+            <div class="elegant-grid">
+                
+                <div class="grid-item structural-project-card">
+                    <a href="structures.html#project1" class="elegant-card-link">
+                        <div class="elegant-project-visual">
+                            <img src="images/placeholder2.jpg" alt="Structural Design 1 | Project 1 | Photo 2" class="project-img">
+                        </div>
+                        <div class="elegant-project-content">
+                            <h3 class="elegant-project-title">Project Title 1 (Generic Label)</h3>
+                            <p class="elegant-project-brief"><em>(Insert brief description 2)</em> This project involves structural analysis and design of a modern, resilient structure. All engineering details and labels are generic placeholders.</p>
+                        </div>
+                    </a>
+                </div>
 
-            <div class="edu-item">
-                <div class="edu-header">
-                    <p class="edu-school">Drexel University</p>
-                    <span class="edu-dates">Expected Graduation: June 2026</span>
+                <div class="grid-item photo-gallery-card">
+                    <a href="photography.html#collection1" class="elegant-card-link">
+                        <div class="elegant-project-visual">
+                            <img src="images/placeholder3.jpg" alt="Photography Collection 1 | Photo 3" class="project-img">
+                        </div>
+                        <div class="elegant-project-content">
+                            <h3 class="elegant-project-title">Photography Collection 1 (Generic Label)</h3>
+                            <p class="elegant-project-brief"><em>(Insert brief description 3)</em> Chasing light, capturing structure. All collection details and labels are generic placeholders.</p>
+                        </div>
+                    </a>
                 </div>
-                <p class="edu-degree">Bachelor of Science in Architectural Engineering</p>
-                <ul class="edu-details">
-                    <li><strong>Concentration:</strong> Structural Engineering</li>
-                    <li><strong>Minor:</strong> Art History</li>
-                </ul>
-            </div>
+
+                </div>
         </section>
-
     </main>
 
-    <footer>
-        <p>Contact me: kevinnally01@gmail.com</p>
+    <footer class="page-footer">
+        <p>Contact Kevin J Nally | General footer text 1 | (kevinnally01@gmail.com)</p>
     </footer>
 
 </body>
