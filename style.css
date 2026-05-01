@@ -143,18 +143,63 @@ footer {
 }
 /* --- Updates Page Layout --- */
 .filter-container {
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #000;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
 }
 
-.filter-container select {
-    padding: 8px 15px;
+.filter-label {
+    font-weight: 600;
+    margin-right: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* Minimalist Dropdown Wrapper */
+.custom-select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Strips default browser styling and applies clean text look */
+.custom-select-wrapper select {
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #000;
+    border-radius: 0;
+    padding: 5px 30px 5px 0;
     font-family: inherit;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000;
     cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Custom Minimalist Arrow */
+.custom-select-wrapper::after {
+    content: '▼';
+    font-size: 0.7rem;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #000;
+}
+
+.custom-select-wrapper select:focus {
+    border-bottom-color: #aaa;
+}
+
+.custom-select-wrapper select:hover {
+    border-bottom-color: #666;
 }
 
 .milestone {
