@@ -295,16 +295,43 @@ footer {
 }
 
 .photo-item {
-    break-inside: avoid; /* Prevents a single photo from being split across columns */
+    break-inside: avoid;
     margin-bottom: 20px;
-    transition: opacity 0.4s ease;
+    position: relative; /* This allows the caption to stick to the photo */
+    overflow: hidden; /* This keeps the caption neatly inside the borders */
+    border-radius: 2px;
 }
 
 .photo-item img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 2px;
+    transition: transform 0.4s ease; /* Adds a smooth zoom effect to the photo */
+}
+
+/* The invisible caption layer */
+.caption-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 400;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.4s ease;
+    pointer-events: none; /* Prevents the text from messing up clicks */
+}
+
+/* What happens when you hover */
+.photo-item:hover .caption-overlay {
+    opacity: 1; /* Fades the text in */
+}
+
+.photo-item:hover img {
+    transform: scale(1.03); /* Slightly zooms the photo in */
 }
 
 /* Mobile Responsiveness: Shrinks columns on smaller screens */
