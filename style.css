@@ -255,3 +255,66 @@ footer {
         margin: 0 auto;
     }
 }
+/* --- Photography Portfolio Layout --- */
+
+/* Filter Menu */
+.filter-nav {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 15px;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    font-size: 0.95rem;
+    font-family: inherit;
+    font-weight: 600;
+    color: #cccccc; /* Unselected categories are greyed out */
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter-btn:hover {
+    color: #888888;
+}
+
+.filter-btn.active {
+    color: #000000; /* Solid black for the currently selected category */
+}
+
+/* Masonry Grid (Variable Heights) */
+.masonry-grid {
+    column-count: 4; /* Forces 4 equal-width columns */
+    column-gap: 20px;
+}
+
+.photo-item {
+    break-inside: avoid; /* Prevents a single photo from being split across columns */
+    margin-bottom: 20px;
+    transition: opacity 0.4s ease;
+}
+
+.photo-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+}
+
+/* Mobile Responsiveness: Shrinks columns on smaller screens */
+@media (max-width: 1000px) {
+    .masonry-grid { column-count: 3; }
+}
+@media (max-width: 768px) {
+    .masonry-grid { column-count: 2; }
+    .filter-nav { flex-wrap: wrap; gap: 15px; } /* Lets the menu wrap on phones */
+}
+@media (max-width: 480px) {
+    .masonry-grid { column-count: 1; }
+}
