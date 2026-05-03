@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kevin J Nally | Photography</title>
-    <link rel="icon" type="image/png" href="images/favicon.png"> <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -22,10 +23,70 @@
 
     <main class="container">
         <section id="photography">
-            <h2>Photography</h2>
-            <img src="images/olympicforest.jpg" alt="Olympic National Park, Fujifilm X-T30">
+            <h2 style="border-bottom: none; margin-bottom: 10px;">Photography</h2>
+            
+            <div class="filter-nav">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="nature">Nature</button>
+                <button class="filter-btn" data-filter="architecture">Architecture</button>
+                <button class="filter-btn" data-filter="portraits">Portraits</button>
+                <button class="filter-btn" data-filter="street">Street</button>
+            </div>
+
+            <div class="masonry-grid" id="photo-gallery">
+                
+                <div class="photo-item" data-category="nature">
+                    <img src="images/olympicforest.jpg" alt="Description 1 | Nature">
+                </div>
+
+                <div class="photo-item" data-category="architecture">
+                    <img src="https://via.placeholder.com/600x900.png?text=Architecture+1" alt="Description 2 | Architecture">
+                </div>
+
+                <div class="photo-item" data-category="street">
+                    <img src="https://via.placeholder.com/600x600.png?text=Street+1" alt="Description 3 | Street">
+                </div>
+
+                <div class="photo-item" data-category="portraits">
+                    <img src="https://via.placeholder.com/600x400.png?text=Portrait+1" alt="Description 4 | Portraits">
+                </div>
+
+                <div class="photo-item" data-category="nature">
+                    <img src="https://via.placeholder.com/600x800.png?text=Nature+2" alt="Description 5 | Nature">
+                </div>
+
+                <div class="photo-item" data-category="architecture">
+                    <img src="https://via.placeholder.com/600x600.png?text=Architecture+2" alt="Description 6 | Architecture">
+                </div>
+
+                </div>
         </section>
     </main>
+
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const photoItems = document.querySelectorAll('.photo-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove the solid black 'active' class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add the solid black 'active' class to the clicked button
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                // Loop through all photos to hide or show them
+                photoItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block'; // Show photo
+                    } else {
+                        item.style.display = 'none';  // Hide photo
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
