@@ -1,4 +1,6 @@
-/* Global Styles */
+/* ========================================= */
+/* GLOBAL STYLES                             */
+/* ========================================= */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #ffffff;
@@ -8,14 +10,15 @@ body {
     padding: 0;
 }
 
-/* Expands the website width for desktop viewing */
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 40px 20px;
 }
 
-/* Top Navigation Banner */
+/* ========================================= */
+/* NAVIGATION & HEADERS                      */
+/* ========================================= */
 header {
     display: flex;
     justify-content: space-between;
@@ -47,7 +50,6 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Standard Section Layouts */
 section {
     margin-bottom: 80px;
 }
@@ -59,7 +61,9 @@ h2 {
     margin-bottom: 30px;
 }
 
-/* About Section: Side-by-Side Grid */
+/* ========================================= */
+/* ABOUT PAGE LAYOUT                         */
+/* ========================================= */
 .about-grid {
     display: flex;
     gap: 60px;
@@ -76,72 +80,24 @@ h2 {
 
 .about-image img {
     width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    display: block;
     border-radius: 4px;
     object-fit: cover;
 }
 
-/* Education Section Styling */
-.edu-item {
-    margin-bottom: 40px;
-}
+.edu-item { margin-bottom: 40px; }
+.edu-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
+.edu-school { font-size: 1.3rem; font-weight: bold; margin: 0; }
+.edu-dates { font-style: italic; color: #666; }
+.edu-degree { font-weight: 600; font-size: 1.1rem; margin: 0 0 10px 0; }
+.edu-details { padding-left: 20px; margin: 0; }
+.edu-details li { margin-bottom: 8px; }
 
-.edu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 5px;
-}
-
-.edu-school {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin: 0;
-}
-
-.edu-dates {
-    font-style: italic;
-    color: #666;
-}
-
-.edu-degree {
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin: 0 0 10px 0;
-}
-
-.edu-details {
-    padding-left: 20px;
-    margin: 0;
-}
-
-.edu-details li {
-    margin-bottom: 8px;
-}
-
-/* Footer */
-footer {
-    padding: 40px;
-    border-top: 1px solid #000000;
-    font-size: 0.9rem;
-    text-align: center;
-    margin-top: 60px;
-}
-
-/* Mobile Responsiveness: Stacks items on smaller screens */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-    .about-grid {
-        flex-direction: column;
-    }
-    .edu-header {
-        flex-direction: column;
-    }
-}
-/* --- Updates Page Layout --- */
+/* ========================================= */
+/* UPDATES PAGE LAYOUT                       */
+/* ========================================= */
 .filter-container {
     margin-bottom: 50px;
     display: flex;
@@ -157,13 +113,11 @@ footer {
     color: #888;
 }
 
-/* Minimalist Dropdown Wrapper */
 .custom-select-wrapper {
     position: relative;
     display: inline-block;
 }
 
-/* Strips default browser styling and applies clean text look */
 .custom-select-wrapper select {
     appearance: none; 
     -webkit-appearance: none;
@@ -182,7 +136,6 @@ footer {
     transition: border-color 0.3s ease;
 }
 
-/* Custom Minimalist Arrow */
 .custom-select-wrapper::after {
     content: '▼';
     font-size: 0.7rem;
@@ -194,13 +147,8 @@ footer {
     color: #000;
 }
 
-.custom-select-wrapper select:focus {
-    border-bottom-color: #aaa;
-}
-
-.custom-select-wrapper select:hover {
-    border-bottom-color: #666;
-}
+.custom-select-wrapper select:focus { border-bottom-color: #aaa; }
+.custom-select-wrapper select:hover { border-bottom-color: #666; }
 
 .milestone {
     display: flex;
@@ -211,74 +159,20 @@ footer {
     border-bottom: 1px solid #eeeeee;
 }
 
-.milestone:last-child {
-    border-bottom: none;
-}
+.milestone:last-child { border-bottom: none; }
+.milestone-text { flex: 3; }
+.milestone-visual { flex: 1; display: flex; flex-direction: column; align-items: center; }
+.milestone-visual img { width: 100%; border-radius: 4px; object-fit: cover; margin-bottom: 10px; }
+.caption { font-size: 0.85rem; color: #666; text-align: center; margin: 0; font-style: italic; line-height: 1.4; }
 
-/* Text takes up roughly 75% of the space */
-.milestone-text {
-    flex: 3; 
-}
-
-/* Image takes up roughly 25% of the space */
-.milestone-visual {
-    flex: 1; 
+/* ========================================= */
+/* PHOTOGRAPHY PAGE LAYOUT                   */
+/* ========================================= */
+.filter-nav {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.milestone-visual img {
-    width: 100%;
-    border-radius: 4px;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.caption {
-    font-size: 0.85rem;
-    color: #666;
-    text-align: center;
-    margin: 0;
-    font-style: italic;
-    line-height: 1.4;
-}
-
-/* Mobile Responsiveness: Stacks the text and image on small screens */
-@media (max-width: 768px) {
-    .milestone {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .milestone-visual {
-        width: 80%; /* Keeps the image from getting too massive on a phone */
-        margin: 0 auto;
-    }
-}
-/* --- Photography Portfolio Layout --- */
-
-@media (max-width: 768px) {
-    .masonry-grid { column-count: 2; }
-    
-    /* Sleek Horizontal Scroll for Filters */
-    .filter-nav { 
-        flex-wrap: nowrap; /* Forces them to stay in a row */
-        overflow-x: auto; /* Turns on horizontal scrolling */
-        -webkit-overflow-scrolling: touch; /* Gives it that smooth, buttery swipe on iPhones */
-        justify-content: flex-start;
-        padding-bottom: 5px;
-        gap: 20px;
-        
-        /* This hides the ugly visual scrollbar but keeps the swipe function */
-        scrollbar-width: none; 
-    }
-    .filter-nav::-webkit-scrollbar {
-        display: none; 
-    }
-    .filter-btn {
-        white-space: nowrap; /* Prevents words like 'Architecture' from breaking in half */
-        font-size: 0.85rem; /* Shrinks the text slightly for smaller screens */
-    }
+    gap: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
 }
 
 .filter-btn {
@@ -287,7 +181,7 @@ footer {
     font-size: 0.95rem;
     font-family: inherit;
     font-weight: 600;
-    color: #cccccc; /* Unselected categories are greyed out */
+    color: #cccccc; 
     cursor: pointer;
     padding: 0;
     transition: color 0.3s ease;
@@ -295,25 +189,19 @@ footer {
     letter-spacing: 1px;
 }
 
-.filter-btn:hover {
-    color: #888888;
-}
+.filter-btn:hover { color: #888888; }
+.filter-btn.active { color: #000000; }
 
-.filter-btn.active {
-    color: #000000; /* Solid black for the currently selected category */
-}
-
-/* Masonry Grid (Variable Heights) */
 .masonry-grid {
-    column-count: 4; /* Forces 4 equal-width columns */
+    column-count: 4; 
     column-gap: 20px;
 }
 
 .photo-item {
     break-inside: avoid;
     margin-bottom: 20px;
-    position: relative; /* This allows the caption to stick to the photo */
-    overflow: hidden; /* This keeps the caption neatly inside the borders */
+    position: relative; 
+    overflow: hidden; 
     border-radius: 2px;
 }
 
@@ -321,10 +209,9 @@ footer {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.4s ease; /* Adds a smooth zoom effect to the photo */
+    transition: transform 0.4s ease; 
 }
 
-/* The invisible caption layer */
 .caption-overlay {
     position: absolute;
     bottom: 0;
@@ -335,57 +222,61 @@ footer {
     color: #ffffff;
     font-size: 0.95rem;
     font-weight: 400;
-    opacity: 0; /* Hidden by default */
+    opacity: 0; 
     transition: opacity 0.4s ease;
-    pointer-events: none; /* Prevents the text from messing up clicks */
+    pointer-events: none; 
 }
 
-/* What happens when you hover */
-.photo-item:hover .caption-overlay {
-    opacity: 1; /* Fades the text in */
+.photo-item:hover .caption-overlay { opacity: 1; }
+.photo-item:hover img { transform: scale(1.03); }
+
+/* ========================================= */
+/* FOOTER                                    */
+/* ========================================= */
+footer {
+    padding: 40px;
+    border-top: 1px solid #000000;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 60px;
 }
 
-.photo-item:hover img {
-    transform: scale(1.03); /* Slightly zooms the photo in */
-}
-
-/* Mobile Responsiveness: Shrinks columns on smaller screens */
+/* ========================================= */
+/* MOBILE RESPONSIVENESS (CONSOLIDATED)      */
+/* ========================================= */
 @media (max-width: 1000px) {
     .masonry-grid { column-count: 3; }
 }
-/* Mobile Responsiveness: Stacks items and wraps navigation on smaller screens */
+
 @media (max-width: 768px) {
-    /* Adjusts the top banner for phones */
-    header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-        padding: 20px 15px;
-    }
+    /* Top Banner */
+    header { flex-direction: column; gap: 15px; text-align: center; padding: 20px 15px; }
+    nav { flex-wrap: wrap; justify-content: center; gap: 15px; }
     
-    /* Forces the navigation links to wrap to the next line instead of overflowing */
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px; /* Smaller gap for mobile screens */
-    }
+    /* About Page */
+    .about-grid { flex-direction: column; }
+    .edu-header { flex-direction: column; align-items: flex-start; gap: 5px; }
     
-    /* Stacks the About section side-by-side grid */
-    .about-grid {
-        flex-direction: column;
-    }
+    /* Updates Page */
+    .milestone { flex-direction: column; gap: 20px; }
+    .milestone-visual { width: 80%; margin: 0 auto; }
     
-    /* Adjusts the Education headers */
-    .edu-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
+    /* Photography Page */
+    .masonry-grid { column-count: 2; }
+    .filter-nav { 
+        flex-wrap: nowrap; 
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch; 
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        gap: 20px;
+        scrollbar-width: none; 
     }
+    .filter-nav::-webkit-scrollbar { display: none; }
+    .filter-btn { white-space: nowrap; font-size: 0.85rem; }
 }
 
-/* Extra small screens (like older/smaller iPhones) */
 @media (max-width: 480px) {
-    nav a {
-        font-size: 0.95rem; /* Shrinks the text slightly so it fits better */
-    }
+    nav a { font-size: 0.95rem; }
+    .masonry-grid { column-count: 1; }
 }
