@@ -338,10 +338,39 @@ footer {
 @media (max-width: 1000px) {
     .masonry-grid { column-count: 3; }
 }
+/* Mobile Responsiveness: Stacks items and wraps navigation on smaller screens */
 @media (max-width: 768px) {
-    .masonry-grid { column-count: 2; }
-    .filter-nav { flex-wrap: wrap; gap: 15px; } /* Lets the menu wrap on phones */
+    /* Adjusts the top banner for phones */
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 20px 15px;
+    }
+    
+    /* Forces the navigation links to wrap to the next line instead of overflowing */
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px; /* Smaller gap for mobile screens */
+    }
+    
+    /* Stacks the About section side-by-side grid */
+    .about-grid {
+        flex-direction: column;
+    }
+    
+    /* Adjusts the Education headers */
+    .edu-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
 }
+
+/* Extra small screens (like older/smaller iPhones) */
 @media (max-width: 480px) {
-    .masonry-grid { column-count: 1; }
+    nav a {
+        font-size: 0.95rem; /* Shrinks the text slightly so it fits better */
+    }
 }
