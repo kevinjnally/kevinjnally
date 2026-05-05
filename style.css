@@ -257,13 +257,28 @@ footer {
 }
 /* --- Photography Portfolio Layout --- */
 
-/* Filter Menu */
-.filter-nav {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 40px;
-    border-bottom: 1px solid #eeeeee;
-    padding-bottom: 15px;
+@media (max-width: 768px) {
+    .masonry-grid { column-count: 2; }
+    
+    /* Sleek Horizontal Scroll for Filters */
+    .filter-nav { 
+        flex-wrap: nowrap; /* Forces them to stay in a row */
+        overflow-x: auto; /* Turns on horizontal scrolling */
+        -webkit-overflow-scrolling: touch; /* Gives it that smooth, buttery swipe on iPhones */
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        gap: 20px;
+        
+        /* This hides the ugly visual scrollbar but keeps the swipe function */
+        scrollbar-width: none; 
+    }
+    .filter-nav::-webkit-scrollbar {
+        display: none; 
+    }
+    .filter-btn {
+        white-space: nowrap; /* Prevents words like 'Architecture' from breaking in half */
+        font-size: 0.85rem; /* Shrinks the text slightly for smaller screens */
+    }
 }
 
 .filter-btn {
