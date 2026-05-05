@@ -240,7 +240,8 @@ h2 {
 }
 
 .oversized-text {
-    font-size: 7rem;
+    /* Uses 'clamp' to set a minimum size for phones, a massive maximum size for desktop, and scales dynamically in between */
+    font-size: clamp(4.5rem, 12vw, 10rem); 
     font-weight: 800;
     letter-spacing: -3px;
     line-height: 1;
@@ -345,7 +346,6 @@ footer {
         
     /* Contact Page */
     .contact-grid { flex-direction: column; gap: 50px; }
-    .oversized-text { font-size: 4.5rem; letter-spacing: -1.5px; }
     .location-text { font-size: 1.1rem; }
 }
 
