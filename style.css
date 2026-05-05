@@ -1,6 +1,12 @@
 /* ========================================= */
 /* GLOBAL STYLES                             */
 /* ========================================= */
+/* Forces the browser to calculate padding properly so nothing breaks the screen width */
+* {
+    box-sizing: border-box;
+    word-wrap: break-word; 
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #ffffff;
@@ -268,6 +274,8 @@ h2 {
 
 .contact-links, .micro-blog {
     flex: 1;
+    max-width: 100%; /* Prevents the columns from ever exceeding screen width */
+    overflow: hidden; /* Clips any invisible overflow */
 }
 
 .contact-subtitle {
