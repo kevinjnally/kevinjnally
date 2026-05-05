@@ -240,14 +240,18 @@ h2 {
 }
 
 .oversized-text {
-    /* Uses 'clamp' to set a minimum size for phones, a massive maximum size for desktop, and scales dynamically in between */
-    font-size: clamp(4.5rem, 12vw, 10rem); 
+    /* Lowered the minimum size from 4.5rem to 3rem to fit longer words on phones */
+    font-size: clamp(3rem, 14vw, 10rem); 
     font-weight: 800;
-    letter-spacing: -3px;
+    /* Slightly reduced letter spacing so 'CONNECT' doesn't stretch too wide */
+    letter-spacing: -2px; 
     line-height: 1;
     margin: 0 0 15px 0;
     border-bottom: none;
     padding-bottom: 0;
+    /* Safety net: Forces the word to shrink instead of stretching the screen */
+    word-break: break-word; 
+    max-width: 100%;
 }
 
 .location-text {
@@ -345,7 +349,13 @@ footer {
         scrollbar-width: none; 
         
     /* Contact Page */
-    .contact-grid { flex-direction: column; gap: 50px; }
+  /* Contact Page */
+    .contact-grid { 
+        flex-direction: column; 
+        gap: 40px; 
+        width: 100%; 
+        box-sizing: border-box; /* Ensures padding doesn't push the column off screen */
+    }
     .location-text { font-size: 1.1rem; }
 }
 
