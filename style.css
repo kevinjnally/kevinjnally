@@ -231,6 +231,77 @@ h2 {
 .photo-item:hover img { transform: scale(1.03); }
 
 /* ========================================= */
+/* CONTACT PAGE LAYOUT                       */
+/* ========================================= */
+.contact-hero {
+    margin-bottom: 60px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 40px;
+}
+
+.oversized-text {
+    font-size: 7rem;
+    font-weight: 800;
+    letter-spacing: -3px;
+    line-height: 1;
+    margin: 0 0 15px 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.location-text {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 0;
+}
+
+.contact-grid {
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+}
+
+.contact-links, .micro-blog {
+    flex: 1;
+}
+
+.contact-subtitle {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.clean-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.clean-list li {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.clean-list a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.clean-list a:hover {
+    color: #666;
+}
+
+.response-time {
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: #888;
+    font-style: italic;
+}
+
+/* ========================================= */
 /* FOOTER                                    */
 /* ========================================= */
 footer {
@@ -271,9 +342,11 @@ footer {
         padding-bottom: 5px;
         gap: 20px;
         scrollbar-width: none; 
-    }
-    .filter-nav::-webkit-scrollbar { display: none; }
-    .filter-btn { white-space: nowrap; font-size: 0.85rem; }
+        
+    /* Contact Page */
+    .contact-grid { flex-direction: column; gap: 50px; }
+    .oversized-text { font-size: 4.5rem; letter-spacing: -1.5px; }
+    .location-text { font-size: 1.1rem; }
 }
 
 @media (max-width: 480px) {
