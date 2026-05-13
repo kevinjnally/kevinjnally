@@ -315,6 +315,74 @@ h2 {
 }
 
 /* ========================================= */
+/* STRUCTURES PAGE LAYOUT                    */
+/* ========================================= */
+.project-category {
+    margin-bottom: 80px;
+}
+
+.project-category h3 {
+    font-size: 1.4rem;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+/* Dynamic CSS Grid: Automatically fits as many cards as possible, then wraps */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.project-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* Locks all thumbnails to a 4:3 rectangle shape */
+.project-thumb {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 2px;
+    margin-bottom: 15px;
+    background-color: #f5f5f5; /* Light gray placeholder background */
+}
+
+.project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+/* Hover Effect: Zooms the image slightly but keeps text normal */
+.project-card:hover .project-thumb img {
+    transform: scale(1.04);
+}
+
+.project-card:hover h4 {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.project-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.15rem;
+}
+
+.project-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ========================================= */
 /* FOOTER                                    */
 /* ========================================= */
 footer {
